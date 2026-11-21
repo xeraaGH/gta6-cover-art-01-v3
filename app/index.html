@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice Cover Studio — GTA 6-style cover maker</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="app">
+  <section class="panel controls" aria-label="Cover editor">
+    <header>
+      <h1>VICE COVER STUDIO</h1>
+      <p class="tag">Your photo, your caption — a Vice City poster.</p>
+    </header>
+
+    <div class="group">
+      <h2>Layout</h2>
+      <div class="row" id="layouts"></div>
+    </div>
+
+    <div class="group">
+      <h2>Size</h2>
+      <div class="row" id="sizes"></div>
+    </div>
+
+    <div class="group">
+      <h2>Photos — click a panel, then a photo</h2>
+      <div class="library" id="library"></div>
+      <div class="row">
+        <button id="fill-distinct" type="button">Fill distinct</button>
+        <button id="shuffle" type="button">Shuffle photos</button>
+        <label class="upload">Upload photo <input id="upload" type="file" accept="image/*" multiple></label>
+      </div>
+      <p class="hint" id="panel-hint">Panel 1 selected. Drag the cover to pan its photo, scroll to zoom it.</p>
+    </div>
+
+    <div class="group">
+      <h2>Grade — selected panel</h2>
+      <div class="row" id="grades"></div>
+      <label class="check"><input id="night" type="checkbox"> NIGHT SHIFT — neon night grade on every panel</label>
+    </div>
+
+    <div class="group">
+      <h2>Caption</h2>
+      <label>Title <input id="title" type="text" maxlength="24" value="MIDNIGHT VICE"></label>
+      <label>Subtitle <input id="subtitle" type="text" maxlength="48" value="after dark in vice city"></label>
+    </div>
+
+    <div class="group">
+      <h2>Stickers — click to add, drag on the cover to move</h2>
+      <div class="row" id="stickers"></div>
+      <button id="clear-stickers" type="button">Clear stickers</button>
+    </div>
+
+    <button id="export" type="button" class="primary">Export PNG</button>
+    <p id="status" role="status"></p>
+  </section>
+
+  <section class="stage">
+    <canvas id="cover" width="1920" height="1080" aria-label="The cover preview"></canvas>
+    <p class="stage-hint">Live preview — drag a panel to pan its photo, scroll to zoom it, drag a sticker to move it. Drop your own photos onto the cover.</p>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
